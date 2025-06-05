@@ -15,4 +15,8 @@ jobs:
       - name: Update diagram
         uses: githubocto/repo-visualizer@main
         with:
+          should_push: false
+      - name: make diagram
+        uses: githubocto/repo-visualizer@main
+        with:
            artifact_name: diagram
