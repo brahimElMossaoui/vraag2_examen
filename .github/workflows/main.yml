@@ -1,0 +1,22 @@
+name: Create diagram
+on:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+      - main
+jobs:
+  get_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Update diagram
+        uses: githubocto/repo-visualizer@main
+        with:
+          excluded_paths: "ignore,.github"
+      - name: maak artifact
+        uses: githubocto/repo-visualizer@0.9.1
+        with:
+           artifact_name: diagram
